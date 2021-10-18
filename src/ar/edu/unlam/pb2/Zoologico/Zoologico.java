@@ -6,10 +6,10 @@ public class Zoologico {
 	private Cliente [] clientes;
 	private String nombre;
     private Integer contadorDeAnimales;    
-	private static Double valorEntrada = 300.0;
+	private static final Double VALOR_ENTRADA = 300.0;
 	private static Integer cantidadMaximoDeVisitantes = 20;
 	private Integer contadorEntradas=0;
-	public Zoologico(String nombre){
+    public Zoologico(String nombre){
 		this.nombre = nombre;
 		this.animales = new Animal[20];
 		this.clientes = new Cliente[cantidadMaximoDeVisitantes];
@@ -73,6 +73,9 @@ public class Zoologico {
 				this.contadorDeAnimales++;
 			}
 		}
+	}
+	public Double obtenerElTotalRecaudadoDeVentas() {
+		return this.VALOR_ENTRADA*this.contadorEntradas;
 	}
 
 }

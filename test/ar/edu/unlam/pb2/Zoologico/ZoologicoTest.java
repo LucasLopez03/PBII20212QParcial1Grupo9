@@ -77,5 +77,20 @@ public void QueSePuedaConocerLaCantidadDeAnimalesDelZoologico() {
 		
 		assertEquals((Integer)2, temaiken.getCantidadDeVisitantes());
 	}
+	@Test
+	public void QueSePuedaObtenerElTotalRecaudadoDelDia() {
+		Double valorEsperado=900.0;
+		Double valorObtenido;
+        Cliente lucas = new Cliente (39918064, "Lucas");
+		Cliente pepe=new Cliente(124567890,"pepe");
+		Cliente juan = new Cliente (39293734, "Juan");
+		Zoologico temaiken = new Zoologico ("Temaiken");
+		temaiken.ventaEntrada(lucas);
+		temaiken.ventaEntrada(juan);
+        temaiken.ventaEntrada(pepe);
+		valorObtenido=temaiken.obtenerElTotalRecaudadoDeVentas();
+		assertEquals(valorObtenido, valorEsperado);
+	}
+
 
 }
