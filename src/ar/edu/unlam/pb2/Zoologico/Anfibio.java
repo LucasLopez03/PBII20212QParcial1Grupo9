@@ -6,4 +6,5 @@ public abstract class Anfibio extends Animal {
 		super(peso, altura, extremidades, tieneHambre);
 		}
 		
+public abstract Animal ponerHuevo();
 }
