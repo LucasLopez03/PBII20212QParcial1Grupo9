@@ -2,21 +2,22 @@ package ar.edu.unlam.pb2.Zoologico;
 
 public class Cliente {
 
-	private String dni;
+	private Integer dni;
 	private String nombreApellido;
 	private Integer entrada;
 
-	public Cliente(String dni, String nombreApellido, Integer entrada) {
+	public Cliente(Integer dni, String nombreApellido) {
+		super();
 		this.dni = dni;
 		this.nombreApellido = nombreApellido;
-		this.entrada = entrada;
+		this.entrada = 0;
 	}
 
-	public String getDni() {
+	public Integer getDni() {
 		return dni;
 	}
 
-	public void setDni(String dni) {
+	public void setDni(Integer dni) {
 		this.dni = dni;
 	}
 
