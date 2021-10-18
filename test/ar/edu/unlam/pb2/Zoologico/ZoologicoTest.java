@@ -40,8 +40,12 @@ public class ZoologicoTest {
 		Zoologico temaiken = new Zoologico("Temaiken");
 		Cliente lucas = new Cliente (39918064, "Lucas");
 		
-		temaiken.ventaEntrada(lucas, 1);
+		Cliente juan = new Cliente (39293734, "Juan");
+
 		
-		assertEquals((Integer)1, temaiken.getCantidadDeVisitantes());
+		temaiken.ventaEntrada(lucas);
+		temaiken.ventaEntrada(juan);
+		
+		assertEquals((Integer)2, temaiken.getCantidadDeVisitantes());
 	}
 }

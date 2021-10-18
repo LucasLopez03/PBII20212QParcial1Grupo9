@@ -15,16 +15,15 @@ public class Zoologico {
 		this.clientes = new Cliente[cantidadMaximoDeVisitantes];
 	}
 	
-	public void ventaEntrada(Cliente cliente, Integer cantidadEntradas) {
+	public void ventaEntrada(Cliente cliente) {
 		if (contadorEntradas!=cantidadMaximoDeVisitantes) {
 			for (int i = 0; i < clientes.length; i++) {
 				if (clientes[i]==null) {
-					for (int j = 0; j < cantidadEntradas; j++) {
-						clientes[j] = cliente;	
-					}
+					clientes[i] = cliente;
+					break;
 				}
 			}
-			contadorEntradas = + cantidadEntradas;	
+			contadorEntradas++;	
 		}
 	}
 	
