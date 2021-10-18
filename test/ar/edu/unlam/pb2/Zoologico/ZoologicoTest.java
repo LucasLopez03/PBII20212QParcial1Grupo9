@@ -15,7 +15,7 @@ public class ZoologicoTest {
 	
 	@Test
 	public void QueSePuedaInstanciarUnMamifero() {
-	Mamifero puma = new Puma(20.0, 1.2, 4, true, "rubio");
+		Mamifero puma = new Puma(20.0, 1.2, 4, true, "rubio");
 
 	assertEquals((Double)20.0, ((Puma)puma).getPeso());
 	assertEquals((Double)1.2, puma.getAltura());
@@ -34,6 +34,7 @@ public class ZoologicoTest {
 		
 		assertFalse(valorObtenido);
 	}
+<<<<<<< HEAD
  
 	
 @Test
@@ -62,4 +63,20 @@ public void QueSePuedaConocerLaCantidadDeAnimalesDelZoologico() {
 	assertEquals(valorEsperado,valorObtenido);
 	
 }
+=======
+	
+	@Test
+	public void QueSePuedaVenderUnaEntradaAlZoologico() {
+		Zoologico temaiken = new Zoologico("Temaiken");
+		Cliente lucas = new Cliente (39918064, "Lucas");
+		
+		Cliente juan = new Cliente (39293734, "Juan");
+
+		
+		temaiken.ventaEntrada(lucas);
+		temaiken.ventaEntrada(juan);
+		
+		assertEquals((Integer)2, temaiken.getCantidadDeVisitantes());
+	}
+>>>>>>> 8565344609eb92b397a32210767425d3e87d773b
 }
