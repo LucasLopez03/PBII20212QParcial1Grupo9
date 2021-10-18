@@ -4,6 +4,8 @@ import static org.junit.Assert.*;
 
 import org.junit.Test;
 
+import ar.edu.unlam.pb2.Zoologico.Animal.ActividadesQueRealizan;
+
 public class ZoologicoTest {
 
 	@Test

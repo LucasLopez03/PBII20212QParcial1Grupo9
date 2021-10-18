@@ -1,7 +1,23 @@
 package ar.edu.unlam.pb2.Zoologico;
 
+import ar.edu.unlam.pb2.Zoologico.Animal.ActividadesQueRealizan;
+
 public abstract class Animal {
 	
+	
+	public enum ActividadesQueRealizan {
+		JUGAR_CON_LA_PELOTA,
+		MORDER,
+		TREPAR_ARBOL,
+		NADAR,
+		DAR_LA_PATA,
+		SENTARSE,
+		PELAR_BANANA,
+		SALUDAR,
+		BAILAR,
+		HACER_PIRUETAS_EN_EL_AGUA,
+
+	}
 	private Double peso;
 	private String nombreDeanimal;
 	private Double altura;
