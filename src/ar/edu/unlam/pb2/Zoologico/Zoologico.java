@@ -78,4 +78,10 @@ public class Zoologico {
 		return this.VALOR_ENTRADA*this.contadorEntradas;
 	}
 
+	public Boolean enseñarActividad(Mono nuevoMono, ActividadesQueRealizan jugarConLaPelota) {
+		Boolean agregado=false;
+		agregado=nuevoMono.apreder(jugarConLaPelota);
+		return agregado;
+	}
+
 }

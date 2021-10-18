@@ -4,11 +4,11 @@ public abstract class Mamifero extends Animal{
 
 	private String color;
 	
-	public Mamifero(Double peso, Double altura, Integer extremidades, Boolean tieneHambre, String color) {
-		super(peso, altura, extremidades, tieneHambre);
+	public Mamifero(Double peso, Double altura, Integer extremidades, Boolean tieneHambre, String color,String nombreAnimal) {
+		super(peso, altura, extremidades, tieneHambre,nombreAnimal);
 		this.color = color;
 		}
-	
+	 
 	public String getColor() {
 		return color;
 	}
