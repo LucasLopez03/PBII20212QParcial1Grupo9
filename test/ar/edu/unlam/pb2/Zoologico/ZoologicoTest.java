@@ -34,8 +34,7 @@ public class ZoologicoTest {
 		
 		assertFalse(valorObtenido);
 	}
-<<<<<<< HEAD
- 
+
 	
 @Test
 public void QueSepuedaIntroducirUnNuevoAnimalAlZoologico() {
@@ -63,7 +62,7 @@ public void QueSePuedaConocerLaCantidadDeAnimalesDelZoologico() {
 	assertEquals(valorEsperado,valorObtenido);
 	
 }
-=======
+
 	
 	@Test
 	public void QueSePuedaVenderUnaEntradaAlZoologico() {
@@ -78,5 +77,5 @@ public void QueSePuedaConocerLaCantidadDeAnimalesDelZoologico() {
 		
 		assertEquals((Integer)2, temaiken.getCantidadDeVisitantes());
 	}
->>>>>>> 8565344609eb92b397a32210767425d3e87d773b
+
 }
