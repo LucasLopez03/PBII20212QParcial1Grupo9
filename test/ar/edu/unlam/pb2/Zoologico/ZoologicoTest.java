@@ -95,7 +95,7 @@ public void QueSePuedaConocerLaCantidadDeAnimalesDelZoologico() {
 	@Test
 	public void queSePuedaEnseñarAUnAnimalUnaActividad() {
 	    Boolean valorObtenido;
-		Mono nuevoMono= new Mono(30.0,50.0,4,true,"negro",30.0,TipoDeMono.orangutan,"mono");
+		Animal nuevoMono= new Mono(30.0,50.0,4,true,"negro",30.0,TipoDeMono.orangutan,"mono");
 		Zoologico temaiken = new Zoologico ("Temaiken");
 	valorObtenido=temaiken.enseñarActividad(nuevoMono,ActividadesQueRealizan.JUGAR_CON_LA_PELOTA);
 	assertTrue(valorObtenido);
