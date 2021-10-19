@@ -32,6 +32,38 @@ public class ZoologicoTest {
 	}
 	
 	@Test
+	public void QueSePuedaInstanciarUnAnfibio() {
+		//Preparacion
+
+		Anfibio rana = new Rana(10.0,5.0,3,true,"verde","rana", Edad.ADULTO);
+
+		//Comprobacion
+		assertEquals((Double)10.0, ((Rana)rana).getPeso());
+		assertEquals((Double)5.0, rana.getAltura());
+		assertEquals((Integer)3, rana.getExtremidades());
+		assertEquals((Boolean)true, ((Rana)rana).getTieneHambre());
+		assertEquals("verde", ((Rana)rana).getColorDePiel());
+		assertEquals("rana", ((Rana)rana).getNombreDeanimal());
+	}
+	
+	@Test
+	public void QueSePuedaInstanciarUnAcuatico() {
+		//Preparacion
+
+		Acuatico salmon = new Salmon(10.0,5.0, 3, false, true, true, 30.0, "salmoncito", Edad.JOVEN);
+
+		//Comprobacion
+		assertEquals((Double)10.0, ((Salmon)salmon).getPeso());
+		assertEquals((Double)5.0, salmon.getAltura());
+		assertEquals((Integer)3, salmon.getExtremidades());
+		assertEquals((Boolean)false, ((Salmon)salmon).getTieneHambre());
+		assertEquals((Boolean)true, salmon.getAletas());
+		assertEquals((Boolean)true, salmon.getTraqueas());
+		assertEquals((Double)30.0, salmon.getLargo());
+		assertEquals("salmoncito", ((Salmon)salmon).getNombreDeanimal());
+	}
+	
+	@Test
 	public void QueSePuedaAlimentarUnMamifero() {
 		//Preparacion
 		Mamifero puma = new Puma(20.0, 1.2, 4, true, "rubio","puma", Edad.BEBE);
@@ -40,6 +72,34 @@ public class ZoologicoTest {
 		puma.alimentar();
 		
 		Boolean valorObtenido = puma.getTieneHambre();
+		
+		//Comprobacion
+		assertFalse(valorObtenido);
+	}
+	
+	@Test
+	public void QueSePuedaAlimentarUnAnfibio() {
+		//Preparacion
+		Anfibio rana = new Rana(10.0,5.0,3,true,"verde","rana", Edad.ADULTO);
+		
+		//Ejecucion
+		rana.alimentar();
+		
+		Boolean valorObtenido = rana.getTieneHambre();
+		
+		//Comprobacion
+		assertFalse(valorObtenido);
+	}
+	
+	@Test
+	public void QueSePuedaAlimentarUnAcuatico() {
+		//Preparacion
+		Acuatico salmon = new Salmon(10.0,5.0, 3, false, true, true, 30.0, "salmoncito", Edad.JOVEN);
+		
+		//Ejecucion
+		salmon.alimentar();
+		
+		Boolean valorObtenido = salmon.getTieneHambre();
 		
 		//Comprobacion
 		assertFalse(valorObtenido);
