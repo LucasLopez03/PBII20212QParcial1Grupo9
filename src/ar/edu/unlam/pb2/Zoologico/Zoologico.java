@@ -62,6 +62,19 @@ public class Zoologico {
 		}
 		return agregado;
 	}
+	
+	public Animal buscarAnimal(Animal animalBuscado) {
+		Animal animal = null;
+		
+		for (int i = 0; i < animales.length; i++) {
+			if (this.animales[i].equals(animalBuscado)) {
+				animal = this.animales[i];
+				break;
+			}
+		}
+		
+		return animal;
+	}
 
 	public Integer obtenerCantidadDeAnimales() {
 		this.calcularCantidadDeAnimales();		

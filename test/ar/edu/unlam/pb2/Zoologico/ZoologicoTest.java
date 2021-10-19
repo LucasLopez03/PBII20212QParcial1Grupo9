@@ -131,9 +131,35 @@ public class ZoologicoTest {
 	}
 	
 	@Test
-	public void queSePuedaBuscarUnAnimal() {
+	public void queSePuedaEnseñarAOtroAnimalOtraActividad() {
+		//Preparacion
+	    Boolean valorObtenido;
+		Animal nuevoPuma= new Puma(20.0, 1.2, 4, true, "rubio","pumatom");
+
+		Zoologico temaiken = new Zoologico ("Temaiken");
 		
+		//Ejecucion
+		valorObtenido=temaiken.enseñarActividad(nuevoPuma,ActividadesQueRealizan.CAZAR);
+		
+		//Comprobacion
+		assertTrue(valorObtenido);
 	}
-
-
+	
+	@Test
+	public void queSePuedaBuscarUnAnimal() {
+		//Preparacion
+		Animal nuevoMono= new Mono(30.0,50.0,4,true,"negro",30.0,TipoDeMono.orangutan,"mono");
+		Animal nuevoPuma= new Puma(20.0, 1.2, 4, true, "rubio","pumatom");
+		Zoologico temaiken = new Zoologico ("Temaiken");
+		
+		//Ejecucion
+		temaiken.agregarNuevoAnimal(nuevoPuma);
+		temaiken.agregarNuevoAnimal(nuevoMono);
+		
+		Animal valorObtenido = temaiken.buscarAnimal(nuevoPuma);
+	
+		//Comprobacion
+		assertEquals(nuevoPuma, valorObtenido);
+	}
+	
 }
