@@ -6,12 +6,15 @@ public  abstract class Acuatico extends Animal{
     Double largo;
 	private static Edad edad;
 
-	public Acuatico(Double peso, Double altura, Integer extremidades, Boolean tieneHambre,Boolean aletas, Boolean traqueas,Double largo,String nombreAnimal) {
+	public Acuatico(Double peso, Double altura, Integer extremidades, Boolean tieneHambre,Boolean aletas, Boolean traqueas,Double largo,String nombreAnimal, Edad edad) {
 		super(peso, altura, extremidades, tieneHambre,nombreAnimal, edad);
 		this.aletas=aletas;
 		this.traqueas=traqueas;
 	    this.largo=largo;
 	}
+	
+	public abstract Animal ponerHuevo();
+	
 	public Boolean getAletas() {
 		return aletas;
 	}
