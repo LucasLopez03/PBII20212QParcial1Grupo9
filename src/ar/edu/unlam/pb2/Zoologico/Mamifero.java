@@ -3,9 +3,10 @@ package ar.edu.unlam.pb2.Zoologico;
 public abstract class Mamifero extends Animal{
 
 	private String color;
-	
-	public Mamifero(Double peso, Double altura, Integer extremidades, Boolean tieneHambre, String color,String nombreAnimal) {
-		super(peso, altura, extremidades, tieneHambre,nombreAnimal);
+	private static Edad edad;
+
+	public Mamifero(Double peso, Double altura, Integer extremidades, Boolean tieneHambre, String color,String nombreAnimal, Edad edad) {
+		super(peso, altura, extremidades, tieneHambre,nombreAnimal, edad);
 		this.color = color;
 		}
 	 

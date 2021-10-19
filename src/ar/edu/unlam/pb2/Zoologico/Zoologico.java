@@ -11,6 +11,7 @@ public class Zoologico {
 	private static final Double VALOR_ENTRADA = 300.0;
 	private static Integer cantidadMaximoDeVisitantes = 20;
 	private Integer contadorEntradas=0;
+	
     public Zoologico(String nombre){
 		this.nombre = nombre;
 		this.animales = new Animal[20];
@@ -90,12 +91,12 @@ public class Zoologico {
 		}
 	}
 	public Double obtenerElTotalRecaudadoDeVentas() {
-		return this.VALOR_ENTRADA*this.contadorEntradas;
+		return Zoologico.VALOR_ENTRADA*this.contadorEntradas;
 	}
 
 	public Boolean enseñarActividad(Animal nuevoMono, ActividadesQueRealizan jugarConLaPelota) {
 		Boolean agregado=false;
-		agregado=nuevoMono.apreder(jugarConLaPelota);
+		agregado=nuevoMono.aprender(jugarConLaPelota);
 		return agregado;
 	}
 
