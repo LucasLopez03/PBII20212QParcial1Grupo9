@@ -11,8 +11,10 @@ public abstract class Animal {
 	private Double altura;
 	private Integer extremidades;
 	private Boolean tieneHambre;
+	private Edad edad;
     private ActividadesQueRealizan []listaDeActividades;
-	public Animal(Double peso, Double altura, Integer extremidades, Boolean tieneHambre,String nombreDeAnimal) {
+    
+	public Animal(Double peso, Double altura, Integer extremidades, Boolean tieneHambre,String nombreDeAnimal, Edad edad) {
 		super();
 		this.peso = peso;
 		this.altura = altura;
@@ -20,10 +22,12 @@ public abstract class Animal {
 		this.tieneHambre= tieneHambre;
 		this.listaDeActividades=new ActividadesQueRealizan[10];
 	    this.nombreDeanimal=nombreDeAnimal;
+	    this.setEdad(edad);
+
 	}
 	
 	public abstract  void  alimentar () ;
-    public Boolean apreder(ActividadesQueRealizan nuevaActividad) {
+    public Boolean aprender(ActividadesQueRealizan nuevaActividad) {
     	Boolean agregado=false;
     	for (int i = 0; i < listaDeActividades.length; i++) {
 			if(listaDeActividades[i]==null) {
@@ -33,7 +37,24 @@ public abstract class Animal {
 			}
 		}
     	return agregado;
-    };
+    }
+    
+	public void crecer() {
+		switch(edad) {
+			case BEBE:
+				this.edad = edad.JOVEN;
+				break;
+			case JOVEN:
+				this.edad = edad.ADULTO;
+				break;
+			case ADULTO:
+				this.edad = edad.MUERTO;
+				break;
+			default:
+				break;
+		}
+	}
+        
 	public String getNombreDeanimal() {
 		return nombreDeanimal;
 	}
@@ -72,6 +93,14 @@ public abstract class Animal {
 
 	public void setTieneHambre(Boolean tieneHambre) {
 		this.tieneHambre = tieneHambre;
+	}
+
+	public Edad getEdad() {
+		return edad;
+	}
+
+	public void setEdad(Edad edad) {
+		this.edad = edad;
 	}
 
 }

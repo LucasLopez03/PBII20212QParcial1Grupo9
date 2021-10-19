@@ -4,13 +4,13 @@ public  abstract class Acuatico extends Animal{
     Boolean aletas;
     Boolean traqueas;
     Double largo;
-    Integer edad;
+	private static Edad edad;
+
 	public Acuatico(Double peso, Double altura, Integer extremidades, Boolean tieneHambre,Boolean aletas, Boolean traqueas,Double largo,String nombreAnimal) {
-		super(peso, altura, extremidades, tieneHambre,nombreAnimal);
+		super(peso, altura, extremidades, tieneHambre,nombreAnimal, edad);
 		this.aletas=aletas;
 		this.traqueas=traqueas;
 	    this.largo=largo;
-	    this.edad=0;
 	}
 	public Boolean getAletas() {
 		return aletas;
@@ -27,10 +27,4 @@ public  abstract class Acuatico extends Animal{
 	public Double getLargo() {
 		return largo;
 	}
-	public void crecer(Double largo) {
-		this.largo = largo;
-	}
-public void cumplirAños() {
-	this.edad++;
-}
 }

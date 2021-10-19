@@ -21,7 +21,7 @@ public class ZoologicoTest {
 	public void QueSePuedaInstanciarUnMamifero() {
 		//Preparacion
 
-		Mamifero puma = new Puma(20.0, 1.2, 4, true, "rubio","pumaDeDientesGrandes");
+		Mamifero puma = new Puma(20.0, 1.2, 4, true, "rubio","pumaDeDientesGrandes", Edad.BEBE);
 
 		//Comprobacion
 		assertEquals((Double)20.0, ((Puma)puma).getPeso());
@@ -34,7 +34,7 @@ public class ZoologicoTest {
 	@Test
 	public void QueSePuedaAlimentarUnMamifero() {
 		//Preparacion
-		Mamifero puma = new Puma(20.0, 1.2, 4, true, "rubio","puma");
+		Mamifero puma = new Puma(20.0, 1.2, 4, true, "rubio","puma", Edad.BEBE);
 		
 		//Ejecucion
 		puma.alimentar();
@@ -51,7 +51,7 @@ public class ZoologicoTest {
 		//Preparacion
 
 		Boolean valorObtenido;
-		Animal nuevoPuma= new Puma(20.0, 1.2, 4, true, "rubio","puma");
+		Animal nuevoPuma= new Puma(20.0, 1.2, 4, true, "rubio","puma", Edad.JOVEN);
 		Zoologico temaiken = new Zoologico ("Temaiken");
 		
 		//Ejecucion
@@ -67,9 +67,9 @@ public class ZoologicoTest {
 
 		Integer valorEsperado=3;
 		Integer valorObtenido;
-		Puma nuevoPuma= new Puma(20.0, 1.2, 4, true, "rubio","pumatom");
-		Mono nuevoMono= new Mono(30.0,50.0,4,true,"negro",30.0,TipoDeMono.orangutan,"mono de peloLargo");
-		Rana nuevaRana= new Rana(10.0,5.0,4,true,"verde","rana");
+		Puma nuevoPuma= new Puma(20.0, 1.2, 4, true, "rubio","pumatom", Edad.ADULTO);
+		Mono nuevoMono= new Mono(30.0,50.0,4,true,"negro",30.0,TipoDeMono.orangutan,"mono de peloLargo", Edad.JOVEN);
+		Rana nuevaRana= new Rana(10.0,5.0,4,true,"verde","rana", Edad.ADULTO);
 		Zoologico temaiken = new Zoologico ("Temaiken");
 		
 		//Ejecucion
@@ -120,7 +120,7 @@ public class ZoologicoTest {
 	public void queSePuedaEnseñarAUnAnimalUnaActividad() {
 		//Preparacion
 	    Boolean valorObtenido;
-		Animal nuevoMono= new Mono(30.0,50.0,4,true,"negro",30.0,TipoDeMono.orangutan,"mono");
+		Animal nuevoMono= new Mono(30.0,50.0,4,true,"negro",30.0,TipoDeMono.orangutan,"mono", Edad.BEBE);
 		Zoologico temaiken = new Zoologico ("Temaiken");
 		
 		//Ejecucion
@@ -134,7 +134,7 @@ public class ZoologicoTest {
 	public void queSePuedaEnseñarAOtroAnimalOtraActividad() {
 		//Preparacion
 	    Boolean valorObtenido;
-		Animal nuevoPuma= new Puma(20.0, 1.2, 4, true, "rubio","pumatom");
+		Animal nuevoPuma= new Puma(20.0, 1.2, 4, true, "rubio","pumatom", Edad.ADULTO);
 
 		Zoologico temaiken = new Zoologico ("Temaiken");
 		
@@ -148,8 +148,8 @@ public class ZoologicoTest {
 	@Test
 	public void queSePuedaBuscarUnAnimal() {
 		//Preparacion
-		Animal nuevoMono= new Mono(30.0,50.0,4,true,"negro",30.0,TipoDeMono.orangutan,"mono");
-		Animal nuevoPuma= new Puma(20.0, 1.2, 4, true, "rubio","pumatom");
+		Animal nuevoMono= new Mono(30.0,50.0,4,true,"negro",30.0,TipoDeMono.orangutan,"mono", Edad.JOVEN);
+		Animal nuevoPuma= new Puma(20.0, 1.2, 4, true, "rubio","pumatom", Edad.ADULTO);
 		Zoologico temaiken = new Zoologico ("Temaiken");
 		
 		//Ejecucion
@@ -160,6 +160,21 @@ public class ZoologicoTest {
 	
 		//Comprobacion
 		assertEquals(nuevoPuma, valorObtenido);
+	}
+	
+	@Test
+	public void queUnAnimalPuedaCrecer() {
+		//Preparacion
+		String valorEsperado = "ADULTO";
+		Animal nuevoMono= new Mono(30.0,50.0,4,true,"negro",30.0,TipoDeMono.orangutan,"mono", Edad.JOVEN);
+		Animal nuevoPuma= new Puma(20.0, 1.2, 4, true, "rubio","pumatom", Edad.ADULTO);
+		Zoologico temaiken = new Zoologico ("Temaiken");
+
+		//Ejecucion
+		nuevoMono.crecer();
+		
+		//Comprobacion
+		assertEquals(valorEsperado, nuevoMono.getEdad().toString());
 	}
 	
 }
